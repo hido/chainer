@@ -39,6 +39,8 @@ You can also install Chainer from the source code:
 python setup.py install
 ```
 
+## Enabling CUDA 
+
 If you want to enable CUDA, first you have to install CUDA and set the environment variable `PATH` and `LD_LIBRARY_PATH` for CUDA executables and libraries.
 For example, if you are using Ubuntu and CUDA is installed by the official distribution, then CUDA is installed at `/usr/local/cuda`.
 In this case, you have to add the following line to `.bashrc` or `.zshrc` (choose which you are using):
@@ -54,6 +56,14 @@ pip install chainer-cuda-deps
 or, from the source:
 ```
 python cuda_deps/setup.py install
+```
+Note that if you use `sudo`, it may ignore the environment variables. Alternatively you can use `--user` option for `pip` without `sudo`:
+```
+pip install --user chainer-cuda-deps
+```
+or, explicitly transfer the variables with `env` command as:
+```
+sudo env "PATH=$PATH" pip install chainer-cuda-deps
 ```
 
 ## More information
